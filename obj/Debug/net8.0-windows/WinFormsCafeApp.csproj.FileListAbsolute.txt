@@ -1,0 +1,16 @@
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\bin\Debug\net8.0-windows\WinFormsCafeApp.exe
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\bin\Debug\net8.0-windows\WinFormsCafeApp.dll
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.Form1.resources
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.csproj.GenerateResource.cache
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.AssemblyInfoInputs.cache
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.AssemblyInfo.cs
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.csproj.CoreCompileInputs.cache
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.dll
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\refint\WinFormsCafeApp.dll
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.pdb
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\bin\Debug\net8.0-windows\WinFormsCafeApp.deps.json
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\bin\Debug\net8.0-windows\WinFormsCafeApp.runtimeconfig.json
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\bin\Debug\net8.0-windows\WinFormsCafeApp.pdb
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\WinFormsCafeApp.genruntimeconfig.cache
+C:\Users\Sujesh Lakhan\source\repos\WinFormsCafeApp\obj\Debug\net8.0-windows\ref\WinFormsCafeApp.dll
