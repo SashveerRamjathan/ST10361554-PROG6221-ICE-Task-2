@@ -31,6 +31,10 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         //list to handle displaying of stack
         List<string> itemHistoryList = new List<string>();
+
+        //list to handle displaying of queue
+        List<string> restockItemsDisplay = new List<string>();
+
         Categories categories = new Categories();
 
         public void CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
@@ -135,6 +139,15 @@ namespace ST10361554_PROG6221_ICE_Task__2
                 itemHistoryList.Add(DisplayItem(item));
             }
         }
+
+        public void DisplayRestockItemQueue()
+        {
+            foreach (InventoryItem item in RestockItems)
+            {
+                restockItemsDisplay.Add(DisplayItem(item));
+            }
+        }
+
         public void PurchaseItem(ItemCategory category, string itemName, int purchaseQuantity)
         {
             List<InventoryItem> items = inventory[category];
