@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace ST10361554_PROG6221_ICE_Task__2
         //quantity goes below certain amount, added to queue to order
         //FIFO
         Queue<InventoryItem> queue = new Queue<InventoryItem>();
+
+        //Lists to handle displaying of inventory
+        List<ItemCategory> categoriesInDictionary = new List<ItemCategory>();
+        ArrayList itemLists = new ArrayList();
+        List<string>? items;
 
         Categories categories = new Categories();
 
@@ -75,6 +81,22 @@ namespace ST10361554_PROG6221_ICE_Task__2
                            "-----------------------------------------------------------";
 
             return itemToString;
+        }
+
+        public void DisplayInventory()
+        {
+            foreach(KeyValuePair<ItemCategory, List<InventoryItem>> kvp in inventory)
+            {
+                categoriesInDictionary.Add(kvp.Key);
+                items = new List<string>();
+
+                foreach (InventoryItem item in kvp.Value)
+                {
+                    items.Add(DisplayItem(item));
+                }
+
+                itemLists.Add(items);
+            }
         }
 
     }
