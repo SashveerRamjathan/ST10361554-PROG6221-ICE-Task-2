@@ -29,6 +29,8 @@ namespace ST10361554_PROG6221_ICE_Task__2
         ArrayList itemLists = new ArrayList();
         List<string>? items;
 
+        //list to handle displaying of stack
+        List<string> itemHistoryList = new List<string>();
         Categories categories = new Categories();
 
         public void CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
@@ -126,6 +128,13 @@ namespace ST10361554_PROG6221_ICE_Task__2
             }
         }
 
+        public void DisplayItemHistoryStack()
+        {
+            foreach (InventoryItem item in AddItemHistory)
+            {
+                itemHistoryList.Add(DisplayItem(item));
+            }
+        }
         public void PurchaseItem(ItemCategory category, string itemName, int purchaseQuantity)
         {
             List<InventoryItem> items = inventory[category];
