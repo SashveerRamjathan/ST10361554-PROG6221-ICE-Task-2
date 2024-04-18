@@ -12,6 +12,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
         public double ItemPrice { get; set; }
         public int ItemQuantity { get; set; }
         public ItemCategory Category { get; set; }
+        public int MinimumQuantity { get; set; }
 
     }
 }
