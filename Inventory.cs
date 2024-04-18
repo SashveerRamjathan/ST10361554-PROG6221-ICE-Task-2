@@ -48,6 +48,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         public void RemoveItem(InventoryItem item) 
         {
+            //get item list from dictionary
             List<InventoryItem> items = inventory[item.Category];
 
             foreach (InventoryItem inventoryItem in items)
@@ -62,6 +63,19 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         }
 
+        public string DisplayItem(InventoryItem item)
+        {
+            string itemToString;
+
+            itemToString = "-----------------------------------------------------------" +
+                           "Item Name: " + item.ItemName +
+                           "Item Price: " + item.ItemPrice +
+                           "Item Quantity: " + item.ItemQuantity +
+                           "Item Category: " + item.Category +
+                           "-----------------------------------------------------------";
+
+            return itemToString;
+        }
 
     }
 }
