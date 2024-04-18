@@ -39,6 +39,8 @@ namespace ST10361554_PROG6221_ICE_Task__2
             item.ItemPrice = price;
             item.ItemQuantity = quantity;
             item.Category = category;
+            item.MinimumQuantity = minQuantity;
+        }
 
         }
 
