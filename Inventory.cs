@@ -52,6 +52,30 @@ namespace ST10361554_PROG6221_ICE_Task__2
             AddItemHistory.Push(item);
         }
 
+        public void PopInventoryItemFromStack(InventoryItem item)
+        {
+            ArrayList list = new ArrayList();
+            
+            foreach (InventoryItem product in AddItemHistory)
+            {
+                list.Add(product);
+                AddItemHistory.Pop();
+            }
+
+            foreach (InventoryItem article in list)
+            {
+                if (article.ItemName == item.ItemName)
+                {
+                    list.Remove(article);
+                }
+            }
+
+            foreach (InventoryItem inventoryItem in list)
+            {
+                AddItemHistory.Push(inventoryItem);
+            }
+        }
+
         public void RemoveItem(InventoryItem item) 
         {
             //get item list from dictionary
@@ -66,6 +90,8 @@ namespace ST10361554_PROG6221_ICE_Task__2
             }
 
             inventory[item.Category] = items;
+
+            PopInventoryItemFromStack(item);
 
         }
 
