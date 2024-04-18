@@ -43,11 +43,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
         public List<InventoryItem> HealthAndWellness { get; set; } = new List<InventoryItem>();
         public List<InventoryItem> Other { get; set; } = new List<InventoryItem>();
 
-        public void AddToCategoryList(InventoryItem item)
-        {
-            GetItemList(item.Category).Add(item);
-        }
-
+       
         public List<InventoryItem> GetItemList(ItemCategory category)
         { 
             List<InventoryItem> items = new List<InventoryItem>();
@@ -118,6 +114,11 @@ namespace ST10361554_PROG6221_ICE_Task__2
             }
 
             return items;
+        }
+
+        public void AddToCategoryList(InventoryItem item)
+        {
+            GetItemList(item.Category).Add(item);
         }
     }
 }
