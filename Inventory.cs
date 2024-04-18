@@ -22,7 +22,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
         //keep track of items that need to be restocked
         //quantity goes below certain amount, added to queue to order
         //FIFO
-        Queue<InventoryItem> queue = new Queue<InventoryItem>();
+        Queue<InventoryItem> RestockItems = new Queue<InventoryItem>();
 
         //Lists to handle displaying of inventory
         List<ItemCategory> categoriesInDictionary = new List<ItemCategory>();
@@ -31,7 +31,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         Categories categories = new Categories();
 
-        public void CreateItem(string name, double price, int quantity, ItemCategory category)
+        public void CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
         {
             InventoryItem item = new InventoryItem();
 
@@ -42,7 +42,6 @@ namespace ST10361554_PROG6221_ICE_Task__2
             item.MinimumQuantity = minQuantity;
         }
 
-        }
 
         public void AddItem(InventoryItem item)
         {
@@ -143,6 +142,22 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         }
 
+        public void CheckItemsToRestock()
+        {
+            foreach (KeyValuePair<ItemCategory, List<InventoryItem>> kvp in inventory)
+            {
+                List<InventoryItem> items = kvp.Value;
+
+                foreach (InventoryItem item in items)
+                {
+                    if(item.ItemQuantity <= item.MinimumQuantity)
+                    {
+                        RestockItems.Enqueue(item);
+                    }
+                }
+
+            }
+        }
 
     }
 }
