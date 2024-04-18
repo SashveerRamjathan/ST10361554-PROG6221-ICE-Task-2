@@ -99,5 +99,22 @@ namespace ST10361554_PROG6221_ICE_Task__2
             }
         }
 
+        public void PurchaseItem(ItemCategory category, string itemName, int purchaseQuantity)
+        {
+            List<InventoryItem> items = inventory[category];
+
+            foreach (InventoryItem item in items)
+            {
+                if (item.ItemName == itemName)
+                {
+                    item.ItemQuantity -= purchaseQuantity;
+                }
+            }
+
+            inventory[category] = items;
+
+        }
+
+
     }
 }
