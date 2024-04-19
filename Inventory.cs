@@ -37,6 +37,8 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         Categories categories = new Categories();
 
+        InputValidator inputValidator = new InputValidator();
+
         public void CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
         {
             InventoryItem item = new InventoryItem();
