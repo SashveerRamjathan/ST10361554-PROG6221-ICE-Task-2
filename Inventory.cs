@@ -53,12 +53,18 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         public void AddItem(InventoryItem item)
         {
-            // add to dictionary
-            categories.AddToCategoryList(item);
-            inventory.Add(item.Category, categories.GetItemList(item.Category));
+           bool isValid = inputValidator.CheckItem(item);
 
-            //add to stack
-            AddItemHistory.Push(item);
+            if (isValid)
+            {
+                // add to dictionary
+                categories.AddToCategoryList(item);
+                inventory.Add(item.Category, categories.GetItemList(item.Category));
+
+                //add to stack
+                AddItemHistory.Push(item);
+            }
+            
         }
 
         public void PopInventoryItemFromStack(InventoryItem item)
@@ -90,17 +96,22 @@ namespace ST10361554_PROG6221_ICE_Task__2
             //get item list from dictionary
             List<InventoryItem> items = inventory[item.Category];
 
-            foreach (InventoryItem inventoryItem in items)
+           bool isValid = inputValidator.ValidateList(items);
+
+            if (isValid)
             {
-                if(inventoryItem.ItemName == item.ItemName)
+                foreach (InventoryItem inventoryItem in items)
                 {
-                    items.Remove(inventoryItem);
+                    if (inventoryItem.ItemName == item.ItemName)
+                    {
+                        items.Remove(inventoryItem);
+                    }
                 }
+
+                inventory[item.Category] = items;
+
+                PopInventoryItemFromStack(item);
             }
-
-            inventory[item.Category] = items;
-
-            PopInventoryItemFromStack(item);
 
         }
 

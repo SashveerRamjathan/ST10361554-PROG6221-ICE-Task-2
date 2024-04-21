@@ -21,5 +21,17 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
             return isValid;
        }
+
+        public bool ValidateList(List<InventoryItem> items)
+        {
+            bool isValid = false;
+
+            if (items.Count == 0)
+            {
+                isValid = false;
+            }
+
+            return isValid;
+        }
     }
 }
