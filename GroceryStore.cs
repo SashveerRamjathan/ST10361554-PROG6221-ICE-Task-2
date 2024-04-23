@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ST10361554_PROG6221_ICE_Task__2
 {
-    internal class GroceryStore
+    public class GroceryStore
     {
-        public Inventory? inventory { get; set; }
+       Inventory GroceryStoreInventory = new Inventory();
+
+        public GroceryStore() 
+        {
+            this.Inventory = GroceryStoreInventory;
+        }
+
+        public Inventory Inventory { get; set; }
     }
 }

@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace ST10361554_PROG6221_ICE_Task__2
 {
-    internal class Inventory
+    public class Inventory
     {
         //key = categories
         //value = list of items in the category
-        Dictionary<ItemCategory, List<InventoryItem>> inventory = new Dictionary<ItemCategory, List<InventoryItem>>();
+        public Dictionary<ItemCategory, List<InventoryItem>> inventory = new Dictionary<ItemCategory, List<InventoryItem>>();
 
         //Keep track of history of added items
         //item added pushed onto stack
         //item removed popped from stack
         //LIFO
-        Stack<InventoryItem> AddItemHistory = new Stack<InventoryItem>();
+        public Stack<InventoryItem> AddItemHistory = new Stack<InventoryItem>();
 
         //keep track of items that need to be restocked
         //quantity goes below certain amount, added to queue to order
@@ -25,21 +25,20 @@ namespace ST10361554_PROG6221_ICE_Task__2
         Queue<InventoryItem> RestockItems = new Queue<InventoryItem>();
 
         //Lists to handle displaying of inventory
-        List<ItemCategory> categoriesInDictionary = new List<ItemCategory>();
-        ArrayList itemLists = new ArrayList();
-        List<string>? items;
+        public List<ItemCategory> categoriesInDictionary = new List<ItemCategory>();
+        public List<List<string>> itemLists = new List<List<string>>();
 
-        //list to handle displaying of stack
-        List<string> itemHistoryList = new List<string>();
+        ////list to handle displaying of stack
+        //List<string> itemHistoryList = new List<string>();
 
         //list to handle displaying of queue
-        List<string> restockItemsDisplay = new List<string>();
+        public List<string> restockItemsDisplay = new List<string>();
 
         Categories categories = new Categories();
 
         InputValidator inputValidator = new InputValidator();
 
-        public void CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
+        public InventoryItem CreateItem(string name, double price, int quantity, ItemCategory category, int minQuantity)
         {
             InventoryItem item = new InventoryItem();
 
@@ -48,6 +47,8 @@ namespace ST10361554_PROG6221_ICE_Task__2
             item.ItemQuantity = quantity;
             item.Category = category;
             item.MinimumQuantity = minQuantity;
+
+            return item;
         }
 
 
@@ -59,15 +60,16 @@ namespace ST10361554_PROG6221_ICE_Task__2
             {
                 // add to dictionary
                 categories.AddToCategoryList(item);
-                inventory.Add(item.Category, categories.GetItemList(item.Category));
+                inventory[item.Category] = categories.GetItemList(item.Category);
 
                 //add to stack
                 AddItemHistory.Push(item);
             }
+            else throw new Exception(message: "Add Item Failed");
             
         }
 
-        public void PopInventoryItemFromStack(InventoryItem item)
+        public void PopInventoryItemFromStack(string itemName)
         {
             ArrayList list = new ArrayList();
             
@@ -79,7 +81,7 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
             foreach (InventoryItem article in list)
             {
-                if (article.ItemName == item.ItemName)
+                if (article.ItemName == itemName)
                 {
                     list.Remove(article);
                 }
@@ -91,10 +93,10 @@ namespace ST10361554_PROG6221_ICE_Task__2
             }
         }
 
-        public void RemoveItem(InventoryItem item) 
+        public void RemoveItem(ItemCategory category, string itemName) 
         {
             //get item list from dictionary
-            List<InventoryItem> items = inventory[item.Category];
+            List<InventoryItem> items = inventory[category];
 
            bool isValid = inputValidator.ValidateList(items);
 
@@ -102,16 +104,17 @@ namespace ST10361554_PROG6221_ICE_Task__2
             {
                 foreach (InventoryItem inventoryItem in items)
                 {
-                    if (inventoryItem.ItemName == item.ItemName)
+                    if (inventoryItem.ItemName == itemName)
                     {
                         items.Remove(inventoryItem);
                     }
                 }
 
-                inventory[item.Category] = items;
+                inventory[category] = items;
 
-                PopInventoryItemFromStack(item);
+                PopInventoryItemFromStack(itemName);
             }
+            else throw new Exception(message: "List is null, could not pop item from stack");
 
         }
 
@@ -119,22 +122,25 @@ namespace ST10361554_PROG6221_ICE_Task__2
         {
             string itemToString;
 
-            itemToString = "-----------------------------------------------------------" +
-                           "Item Name: " + item.ItemName +
-                           "Item Price: " + item.ItemPrice +
-                           "Item Quantity: " + item.ItemQuantity +
-                           "Item Category: " + item.Category +
-                           "-----------------------------------------------------------";
+            itemToString = /*"\n-----------------------------------------------------------" +*/
+                           $"\nItem Name: {item.ItemName}" +
+                           $"\nItem Price: {item.ItemPrice}" +
+                           $"\nItem Quantity: {item.ItemQuantity}" +
+                           $"\nItem Category: {item.Category}";
+                           //"-----------------------------------------------------------";
 
             return itemToString;
         }
 
         public void DisplayInventory()
         {
-            foreach(KeyValuePair<ItemCategory, List<InventoryItem>> kvp in inventory)
+            categoriesInDictionary.Clear();
+            itemLists.Clear();
+
+            foreach (KeyValuePair<ItemCategory, List<InventoryItem>> kvp in inventory)
             {
                 categoriesInDictionary.Add(kvp.Key);
-                items = new List<string>();
+                List<string> items = new List<string>();
 
                 foreach (InventoryItem item in kvp.Value)
                 {
@@ -142,15 +148,16 @@ namespace ST10361554_PROG6221_ICE_Task__2
                 }
 
                 itemLists.Add(items);
+
+
             }
         }
 
-        public void DisplayItemHistoryStack()
+        public InventoryItem DisplayLastAddedItem()
         {
-            foreach (InventoryItem item in AddItemHistory)
-            {
-                itemHistoryList.Add(DisplayItem(item));
-            }
+            InventoryItem item = AddItemHistory.Peek();
+
+            return item;
         }
 
         public void DisplayRestockItemQueue()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST10361554_PROG6221_ICE_Task__2
 {
-    internal class InventoryItem
+    public class InventoryItem
     {
         public string? ItemName { get; set; }
         public double ItemPrice { get; set; }

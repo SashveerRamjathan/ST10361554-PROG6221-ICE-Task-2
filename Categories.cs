@@ -118,7 +118,70 @@ namespace ST10361554_PROG6221_ICE_Task__2
 
         public void AddToCategoryList(InventoryItem item)
         {
-            GetItemList(item.Category).Add(item);
+            switch (item.Category)
+            {
+                case ItemCategory.Produce:
+                    Produce.Add(item);
+                    break;
+
+                case ItemCategory.Dairy:
+                    Dairy.Add(item);
+                    break;
+
+                case ItemCategory.Meat:
+                    Meat.Add(item);
+                    break;
+
+                case ItemCategory.Seafood:
+                    Seafood.Add(item);
+                    break;
+
+                case ItemCategory.Bakery:
+                    Bakery.Add(item);
+                    break;
+
+                case ItemCategory.Frozen_Foods:
+                    FrozenFoods.Add(item);
+                    break;
+
+                case ItemCategory.Canned_Food:
+                    CannedFood.Add(item);
+                    break;
+
+                case ItemCategory.Beverages:
+                    Beverages.Add(item);
+                    break;
+
+                case ItemCategory.Snacks:
+                    Snacks.Add(item);
+                    break;
+
+                case ItemCategory.Kitchen_Essentials:
+                    KitchenEssentials.Add(item);
+                    break;
+
+                case ItemCategory.Condiments:
+                    Condiments.Add(item);
+                    break;
+
+                case ItemCategory.Cleaning_Supplies:
+                    CleaningSupplies.Add(item);
+                    break;
+
+                case ItemCategory.Personal_Care:
+                    PersonalCare.Add(item);
+                    break;
+
+                case ItemCategory.Health_and_Wellness:
+                    HealthAndWellness.Add(item);
+                    break;
+
+                case ItemCategory.Other:
+                    Other.Add(item);
+                    break;
+
+
+            }
         }
     }
 }
