@@ -62,7 +62,7 @@
             AddItemMenuButton.Location = new Point(12, 86);
             AddItemMenuButton.Name = "AddItemMenuButton";
             AddItemMenuButton.Size = new Size(152, 36);
-            AddItemMenuButton.TabIndex = 3;
+            AddItemMenuButton.TabIndex = 1;
             AddItemMenuButton.Text = "Add Item";
             AddItemMenuButton.UseVisualStyleBackColor = true;
             AddItemMenuButton.Click += AddItemMenuButton_Click;
@@ -72,7 +72,7 @@
             DeleteItemMenuButton.Location = new Point(12, 160);
             DeleteItemMenuButton.Name = "DeleteItemMenuButton";
             DeleteItemMenuButton.Size = new Size(152, 36);
-            DeleteItemMenuButton.TabIndex = 4;
+            DeleteItemMenuButton.TabIndex = 2;
             DeleteItemMenuButton.Text = "Delete Item";
             DeleteItemMenuButton.UseVisualStyleBackColor = true;
             DeleteItemMenuButton.Click += DeleteItemMenuButton_Click;
@@ -82,7 +82,7 @@
             PurchaseItemMenuButton.Location = new Point(230, 86);
             PurchaseItemMenuButton.Name = "PurchaseItemMenuButton";
             PurchaseItemMenuButton.Size = new Size(152, 36);
-            PurchaseItemMenuButton.TabIndex = 5;
+            PurchaseItemMenuButton.TabIndex = 4;
             PurchaseItemMenuButton.Text = "Purchase Item";
             PurchaseItemMenuButton.UseVisualStyleBackColor = true;
             PurchaseItemMenuButton.Click += PurchaseItemMenuButton_Click;
@@ -92,17 +92,17 @@
             RestockInventoryMenuButton.Location = new Point(230, 160);
             RestockInventoryMenuButton.Name = "RestockInventoryMenuButton";
             RestockInventoryMenuButton.Size = new Size(152, 36);
-            RestockInventoryMenuButton.TabIndex = 6;
+            RestockInventoryMenuButton.TabIndex = 5;
             RestockInventoryMenuButton.Text = "Restock Inventory";
             RestockInventoryMenuButton.UseVisualStyleBackColor = true;
-            RestockInventoryMenuButton.Click += RestockInventoryMenuButton_Click;
+            RestockInventoryMenuButton.Click += RestockItemMenuButton_Click;
             // 
             // ViewInventoryMenuButton
             // 
             ViewInventoryMenuButton.Location = new Point(12, 241);
             ViewInventoryMenuButton.Name = "ViewInventoryMenuButton";
             ViewInventoryMenuButton.Size = new Size(152, 36);
-            ViewInventoryMenuButton.TabIndex = 7;
+            ViewInventoryMenuButton.TabIndex = 3;
             ViewInventoryMenuButton.Text = "View Inventory";
             ViewInventoryMenuButton.UseVisualStyleBackColor = true;
             ViewInventoryMenuButton.Click += ViewInventoryMenuButton_Click;

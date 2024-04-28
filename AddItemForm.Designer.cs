@@ -69,7 +69,7 @@
             ItemNameTextbox.Location = new Point(138, 69);
             ItemNameTextbox.Name = "ItemNameTextbox";
             ItemNameTextbox.Size = new Size(354, 23);
-            ItemNameTextbox.TabIndex = 3;
+            ItemNameTextbox.TabIndex = 1;
             // 
             // ItemPriceLabel
             // 
@@ -85,7 +85,7 @@
             ItemPriceTextbox.Location = new Point(138, 109);
             ItemPriceTextbox.Name = "ItemPriceTextbox";
             ItemPriceTextbox.Size = new Size(354, 23);
-            ItemPriceTextbox.TabIndex = 5;
+            ItemPriceTextbox.TabIndex = 2;
             // 
             // ItemQuantityLabel
             // 
@@ -121,7 +121,7 @@
             ItemCategoryComboBox.Location = new Point(277, 194);
             ItemCategoryComboBox.Name = "ItemCategoryComboBox";
             ItemCategoryComboBox.Size = new Size(215, 23);
-            ItemCategoryComboBox.TabIndex = 12;
+            ItemCategoryComboBox.TabIndex = 4;
             // 
             // AddToInventoryButton
             // 
@@ -129,7 +129,7 @@
             AddToInventoryButton.Location = new Point(407, 291);
             AddToInventoryButton.Name = "AddToInventoryButton";
             AddToInventoryButton.Size = new Size(117, 35);
-            AddToInventoryButton.TabIndex = 13;
+            AddToInventoryButton.TabIndex = 6;
             AddToInventoryButton.Text = "Add to inventory";
             AddToInventoryButton.UseVisualStyleBackColor = false;
             AddToInventoryButton.Click += AddToInventoryButton_Click;
@@ -139,14 +139,14 @@
             ItemQuantityNumBox.Location = new Point(186, 153);
             ItemQuantityNumBox.Name = "ItemQuantityNumBox";
             ItemQuantityNumBox.Size = new Size(306, 23);
-            ItemQuantityNumBox.TabIndex = 14;
+            ItemQuantityNumBox.TabIndex = 3;
             // 
             // ItemMinQuantityNumBox
             // 
             ItemMinQuantityNumBox.Location = new Point(349, 234);
             ItemMinQuantityNumBox.Name = "ItemMinQuantityNumBox";
             ItemMinQuantityNumBox.Size = new Size(143, 23);
-            ItemMinQuantityNumBox.TabIndex = 15;
+            ItemMinQuantityNumBox.TabIndex = 5;
             // 
             // AddItemHeadingLabel
             // 

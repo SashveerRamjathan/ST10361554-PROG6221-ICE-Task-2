@@ -37,6 +37,7 @@
             ItemQuantityNumBox = new NumericUpDown();
             PurchaseButton = new Button();
             PurchaseItemHeadingLabel = new Label();
+            CheckCategoryButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ItemQuantityNumBox).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             ItemCategoriesComboBox.Location = new Point(12, 66);
             ItemCategoriesComboBox.Name = "ItemCategoriesComboBox";
             ItemCategoriesComboBox.Size = new Size(393, 23);
-            ItemCategoriesComboBox.TabIndex = 22;
+            ItemCategoriesComboBox.TabIndex = 1;
             // 
             // ItemCategoryLabel
             // 
@@ -64,7 +65,7 @@
             ItemNameComboBox.Location = new Point(12, 132);
             ItemNameComboBox.Name = "ItemNameComboBox";
             ItemNameComboBox.Size = new Size(393, 23);
-            ItemNameComboBox.TabIndex = 24;
+            ItemNameComboBox.TabIndex = 2;
             // 
             // ItemNameLabel
             // 
@@ -89,7 +90,7 @@
             ItemQuantityNumBox.Location = new Point(12, 199);
             ItemQuantityNumBox.Name = "ItemQuantityNumBox";
             ItemQuantityNumBox.Size = new Size(393, 23);
-            ItemQuantityNumBox.TabIndex = 26;
+            ItemQuantityNumBox.TabIndex = 3;
             // 
             // PurchaseButton
             // 
@@ -97,7 +98,7 @@
             PurchaseButton.Location = new Point(12, 251);
             PurchaseButton.Name = "PurchaseButton";
             PurchaseButton.Size = new Size(112, 35);
-            PurchaseButton.TabIndex = 27;
+            PurchaseButton.TabIndex = 4;
             PurchaseButton.Text = "Purchase Item";
             PurchaseButton.UseVisualStyleBackColor = false;
             PurchaseButton.Click += PurchaseButton_Click;
@@ -112,11 +113,22 @@
             PurchaseItemHeadingLabel.TabIndex = 28;
             PurchaseItemHeadingLabel.Text = "Purchase Item";
             // 
+            // CheckCategoryButton
+            // 
+            CheckCategoryButton.Location = new Point(422, 64);
+            CheckCategoryButton.Name = "CheckCategoryButton";
+            CheckCategoryButton.Size = new Size(107, 25);
+            CheckCategoryButton.TabIndex = 29;
+            CheckCategoryButton.Text = "Check Category For Items";
+            CheckCategoryButton.UseVisualStyleBackColor = true;
+            CheckCategoryButton.Click += CheckCategoryButton_Click;
+            // 
             // PurchaseItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(440, 312);
+            ClientSize = new Size(558, 312);
+            Controls.Add(CheckCategoryButton);
             Controls.Add(PurchaseItemHeadingLabel);
             Controls.Add(PurchaseButton);
             Controls.Add(ItemQuantityNumBox);
@@ -143,5 +155,6 @@
         private NumericUpDown ItemQuantityNumBox;
         private Button PurchaseButton;
         private Label PurchaseItemHeadingLabel;
+        private Button CheckCategoryButton;
     }
 }

@@ -35,6 +35,7 @@
             DeleteItemHeadingLabel = new Label();
             ItemCategoryLabel = new Label();
             ItemCategoryComboBox = new ComboBox();
+            CheckCategoryButton = new Button();
             SuspendLayout();
             // 
             // ItemNameLabel
@@ -52,7 +53,7 @@
             ItemNameComboBox.Location = new Point(12, 139);
             ItemNameComboBox.Name = "ItemNameComboBox";
             ItemNameComboBox.Size = new Size(290, 23);
-            ItemNameComboBox.TabIndex = 20;
+            ItemNameComboBox.TabIndex = 3;
             // 
             // DeleteItemButton
             // 
@@ -60,7 +61,7 @@
             DeleteItemButton.Location = new Point(12, 187);
             DeleteItemButton.Name = "DeleteItemButton";
             DeleteItemButton.Size = new Size(90, 29);
-            DeleteItemButton.TabIndex = 21;
+            DeleteItemButton.TabIndex = 4;
             DeleteItemButton.Text = "Delete Item";
             DeleteItemButton.UseVisualStyleBackColor = false;
             DeleteItemButton.Click += DeleteItemButton_Click;
@@ -91,13 +92,24 @@
             ItemCategoryComboBox.Location = new Point(12, 70);
             ItemCategoryComboBox.Name = "ItemCategoryComboBox";
             ItemCategoryComboBox.Size = new Size(290, 23);
-            ItemCategoryComboBox.TabIndex = 31;
+            ItemCategoryComboBox.TabIndex = 1;
+            // 
+            // CheckCategoryButton
+            // 
+            CheckCategoryButton.Location = new Point(308, 70);
+            CheckCategoryButton.Name = "CheckCategoryButton";
+            CheckCategoryButton.Size = new Size(107, 25);
+            CheckCategoryButton.TabIndex = 2;
+            CheckCategoryButton.Text = "Check Category For Items";
+            CheckCategoryButton.UseVisualStyleBackColor = true;
+            CheckCategoryButton.Click += CheckCategoryButton_Click;
             // 
             // DeleteItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(450, 227);
+            Controls.Add(CheckCategoryButton);
             Controls.Add(ItemCategoryComboBox);
             Controls.Add(ItemCategoryLabel);
             Controls.Add(DeleteItemHeadingLabel);
@@ -119,5 +131,6 @@
         private Label DeleteItemHeadingLabel;
         private Label ItemCategoryLabel;
         private ComboBox ItemCategoryComboBox;
+        private Button CheckCategoryButton;
     }
 }

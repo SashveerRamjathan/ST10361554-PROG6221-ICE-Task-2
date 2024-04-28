@@ -60,7 +60,7 @@
             RefreshInventoryDisplayButton.Location = new Point(12, 403);
             RefreshInventoryDisplayButton.Name = "RefreshInventoryDisplayButton";
             RefreshInventoryDisplayButton.Size = new Size(158, 35);
-            RefreshInventoryDisplayButton.TabIndex = 2;
+            RefreshInventoryDisplayButton.TabIndex = 1;
             RefreshInventoryDisplayButton.Text = "Refresh Inventory Items";
             RefreshInventoryDisplayButton.UseVisualStyleBackColor = true;
             RefreshInventoryDisplayButton.Click += RefreshInventoryDisplayButton_Click;
@@ -97,7 +97,7 @@
             RefreshItemHistoryButton.Location = new Point(358, 403);
             RefreshItemHistoryButton.Name = "RefreshItemHistoryButton";
             RefreshItemHistoryButton.Size = new Size(158, 35);
-            RefreshItemHistoryButton.TabIndex = 18;
+            RefreshItemHistoryButton.TabIndex = 2;
             RefreshItemHistoryButton.Text = "Refresh Item History";
             RefreshItemHistoryButton.UseVisualStyleBackColor = true;
             RefreshItemHistoryButton.Click += RefreshItemHistoryButton_Click;

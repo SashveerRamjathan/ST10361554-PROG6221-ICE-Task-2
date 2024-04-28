@@ -57,7 +57,7 @@
             CheckInventoryButton.Location = new Point(24, 384);
             CheckInventoryButton.Name = "CheckInventoryButton";
             CheckInventoryButton.Size = new Size(122, 36);
-            CheckInventoryButton.TabIndex = 22;
+            CheckInventoryButton.TabIndex = 1;
             CheckInventoryButton.Text = "Check Inventory";
             CheckInventoryButton.UseVisualStyleBackColor = true;
             CheckInventoryButton.Click += CheckInventoryButton_Click;
